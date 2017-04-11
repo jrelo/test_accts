@@ -1,0 +1,6 @@
+More testfile ideas for rndtree.sh:
+#dd if=/dev/zero of="$D"/testfile.0 bs=10240 count=1
+#dd if=/dev/urandom of="$D"/test.bin bs=1024 count=10
+#ruby -e 'a=STDIN.readlines;100.times do;b=[];4.times do; b << a[rand(a.size)].chomp end; puts b.join(" "); end' < /usr/share/dict/words > "$D"/test.txt
+#SIZE=1; dd if=/dev/zero bs=1M count=$((SIZE*1024)) | pv -pters $((SIZE*1024*1024*1024)) | openssl enc -aes-256-ctr -pass pass:"$(dd if=/dev/urandom bs=128 count=1 2>/dev/null | base64)" -nosalt > randomfile
+#SIZE=1; dd if=/dev/zero bs=$((10*1024))  count=$((SIZE*1024)) | openssl enc -aes-256-cfb -pass pass:"$(dd if=/dev/urandom bs=128 count=1 2>/dev/null | base64)" -nosalt > ./randomfile
